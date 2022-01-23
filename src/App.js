@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState, Suspense } from "react";
+import { Route, Routes } from "react-router-dom";
+
+const HomePage = React.lazy(() => import("./pages/HomePage"));
+const IronManPage = React.lazy(() => import("./pages/IronManPage"));
+const SearchPage = React.lazy(() => import("./pages/SearchPage"));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Suspense fallback="">
+      <Routes>
+        <Route path="" element={<HomePage />} />
+        <Route path="iron_man" element={<IronManPage />} />
+        <Route path="search" element={<SearchPage />} />
+      </Routes>
+    </Suspense>
   );
 }
 
