@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Suspense } from "react";
+import React, { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 
 const HomePage = React.lazy(() => import("./pages/HomePage"));

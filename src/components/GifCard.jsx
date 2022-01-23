@@ -7,7 +7,7 @@ function GifCard({ data }) {
       className="col-12 col-md-6 col-lg-4 my-4"
       style={{ height: "300px" }}
     >
-      <img className="w-100 h-100" src={data?.images?.original?.url} />
+      <img className="w-100 h-100" src={data?.images?.original?.url} alt="" />
     </div>
   );
 }
